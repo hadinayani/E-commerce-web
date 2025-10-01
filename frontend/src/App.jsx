@@ -5,12 +5,17 @@ import { Toaster } from 'sonner';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
+import CollectionPage from './pages/CollectionPage';
+import Checkout from './components/Cart/Checkout';
+import OrderConfirmation from './pages/OrderConfirmation';
+import OrderDetails from './pages/OrderDetails';
+import MyOrder from './pages/MyOrder';
 
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Toaster position='top-right' richColors />'
+      <Toaster position='top-right' richColors />
       <Routes>
         {/* User Layout */}
         <Route path='/' element={<UserLayout />}>
@@ -18,6 +23,11 @@ const App = () => {
           <Route path='login' element={<Login />} />
           <Route path='register' element={<Register />} />
           <Route path='profile' element={<Profile />} />
+          <Route path='collection/:collection' element = {<CollectionPage />} />
+          <Route path='checkout' element = {<Checkout />} />
+          <Route path='order-confirmation' element = {<OrderConfirmation />} />
+          <Route path='order-details/:id' element = {<OrderDetails />} />
+          <Route path='my-order' element = {<MyOrder />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
